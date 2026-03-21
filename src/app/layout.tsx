@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Instrument_Serif, Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -23,10 +23,15 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "FlowStack.Studio — Design & Development Studio",
+  title: "FlowStack.Studio — AI Voice Bots, Chatbots & Automations",
   description:
-    "A design & development studio crafting premium digital products for forward-thinking brands.",
+    "An AI studio building voice bots, chatbots, and automations that scale your business.",
 };
 
 export default function RootLayout({

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 
 export default function Header() {
@@ -19,12 +20,12 @@ export default function Header() {
         scrolled ? "bg-bg-primary/80 backdrop-blur-md" : ""
       }`}
     >
-      <a
+      <Link
         href="/"
         className="font-display text-xl tracking-tight text-text-primary"
       >
         {SITE.name}
-      </a>
+      </Link>
 
       {/* Desktop nav */}
       <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
@@ -59,23 +60,25 @@ export default function Header() {
       </button>
 
       {/* Mobile nav */}
-      {mobileOpen && (
-        <nav
-          className="absolute top-full left-0 right-0 bg-bg-primary/95 backdrop-blur-md py-8 px-6 flex flex-col gap-6 md:hidden"
-          aria-label="Mobile navigation"
-        >
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="font-mono text-sm uppercase tracking-[0.15em] text-text-secondary hover:text-accent transition-colors duration-300"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      )}
+      <nav
+        className={`absolute top-full left-0 right-0 bg-bg-primary/95 backdrop-blur-md px-6 flex flex-col gap-6 md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          mobileOpen ? "max-h-80 py-8 opacity-100 visible" : "max-h-0 py-0 opacity-0 invisible"
+        }`}
+        aria-hidden={!mobileOpen}
+        aria-label="Mobile navigation"
+      >
+        {NAV_LINKS.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            onClick={() => setMobileOpen(false)}
+            tabIndex={mobileOpen ? 0 : -1}
+            className="font-mono text-sm uppercase tracking-[0.15em] text-text-secondary hover:text-accent transition-colors duration-300"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
     </header>
   );
 }

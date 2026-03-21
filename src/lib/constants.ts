@@ -3,9 +3,9 @@ export const IMAGE_SCALE = 0.85;
 
 export const SITE = {
   name: "FlowStack.Studio",
-  tagline: "We build digital experiences",
+  tagline: "We build intelligent automation",
   description:
-    "A design & development studio crafting premium digital products for forward-thinking brands.",
+    "An AI studio building voice bots, chatbots, and automations that scale your business.",
 };
 
 export const NAV_LINKS = [
@@ -17,54 +17,43 @@ export const NAV_LINKS = [
 
 export const SERVICES = [
   {
-    title: "Strategy & Research",
+    title: "AI Voice Bots",
     description:
-      "Deep-dive discovery and strategic frameworks that align your digital presence with business goals.",
+      "AI voice agents that handle inbound customer support and outbound calls on your phone number — available 24/7.",
   },
   {
-    title: "UI/UX Design",
+    title: "AI Chatbots",
     description:
-      "Intentional interfaces built on user insight, crafted to feel effortless and look extraordinary.",
+      "Intelligent chat agents for customer support and engagement, integrated into your website or platform.",
   },
   {
-    title: "Full-Stack Development",
+    title: "Automations",
     description:
-      "Robust, scalable systems from front to back — engineered for performance and maintainability.",
-  },
-  {
-    title: "Motion & Interaction",
-    description:
-      "Purposeful animation and micro-interactions that bring digital products to life.",
+      "Streamline your workflows and automate repetitive business processes to save time and reduce errors.",
   },
 ];
 
 export const ABOUT_TEXT = [
-  "We don't do templates. Every project starts from zero — a blank canvas shaped by your goals, your audience, and the impact you want to make.",
-  "Our process is collaborative, transparent, and obsessively detail-oriented. We believe the best digital experiences emerge when strategy, design, and engineering work in lockstep.",
+  "We build AI systems that work for your business — voice bots that pick up the phone, chatbots that engage your customers, and automations that eliminate busywork.",
+  "Every solution is tailored to your workflows. We don't do one-size-fits-all. We listen, build, and iterate until the system runs like it's part of your team.",
 ];
 
 export const PROJECTS = [
   {
     title: "Meridian Capital",
-    description: "Brand identity & web platform for a boutique investment firm",
+    description: "AI voice bot handling inbound investor inquiries for a boutique investment firm",
   },
   {
     title: "Volta Energy",
-    description: "Product design & engineering for a clean-energy startup",
+    description: "Customer support chatbot & lead qualification automation for a clean-energy startup",
   },
   {
     title: "Atelier Noir",
-    description: "E-commerce experience for a luxury fashion house",
+    description: "AI-powered concierge chatbot for a luxury fashion house",
   },
   {
     title: "Prism Health",
-    description: "Patient portal redesign for a digital health company",
+    description: "Automated patient intake & appointment scheduling via voice bot for a digital health company",
   },
 ];
 
-export const STATS = [
-  { value: 12, suffix: "+", label: "Years Experience" },
-  { value: 200, suffix: "+", label: "Projects Delivered" },
-  { value: 98, suffix: "%", label: "Client Retention" },
-  { value: 4.9, suffix: "", label: "Average Rating" },
-];

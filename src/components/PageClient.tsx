@@ -9,7 +9,6 @@ import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
 import Marquee from "@/components/Marquee";
 import WorkSection from "@/components/WorkSection";
-import StatsSection from "@/components/StatsSection";
 import ContactSection from "@/components/ContactSection";
 
 export default function PageClient() {
@@ -49,9 +48,8 @@ export default function PageClient() {
           <AboutSection />
           <Marquee />
           <WorkSection />
-          <StatsSection />
           <ContactSection />
-          <footer className="relative z-20 py-12 px-6 flex items-center justify-between border-t border-text-muted/10">
+          <footer className="relative z-20 py-12 px-6 flex flex-col gap-2 items-center md:flex-row md:justify-between border-t border-text-muted/10">
             <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-text-muted">
               &copy; {new Date().getFullYear()} FlowStack.Studio
             </span>

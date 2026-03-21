@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const MARQUEE_TEXT =
-  "DESIGN \u2014 DEVELOP \u2014 DEPLOY \u2014 DESIGN \u2014 DEVELOP \u2014 DEPLOY \u2014 ";
+  "AUTOMATE \u2014 INTEGRATE \u2014 SCALE \u2014 AUTOMATE \u2014 INTEGRATE \u2014 SCALE \u2014 ";
 
 export default function Marquee() {
   const trackRef = useRef<HTMLDivElement>(null);
