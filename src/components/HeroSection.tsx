@@ -74,7 +74,7 @@ export default function HeroSection() {
       <h1
         ref={headingRef}
         aria-label={SITE.tagline}
-        className="font-display text-center overflow-hidden"
+        className="font-display text-center"
         style={{
           fontSize: "clamp(3.5rem, 12vw, 12rem)",
           lineHeight: 0.95,
@@ -82,8 +82,10 @@ export default function HeroSection() {
         }}
       >
         {words.map((word, i) => (
-          <span key={i} className="word inline-block mr-[0.25em]">
-            {word}
+          <span key={i} className="inline-block overflow-hidden mr-[0.25em] py-[0.15em]">
+            <span className="word inline-block">
+              {word}
+            </span>
           </span>
         ))}
       </h1>

@@ -29,9 +29,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "FlowStack.Studio — AI Voice Bots, Chatbots & Automations",
+  title: "FlowStack.Studio — AI Voice Bots & Chatbots",
   description:
-    "An AI studio building voice bots, chatbots, and automations that scale your business.",
+    "An AI studio building voice bots and chatbots that scale your business.",
 };
 
 export default function RootLayout({
