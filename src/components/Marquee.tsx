@@ -3,14 +3,15 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLang } from "@/lib/LanguageContext";
+import { t } from "@/lib/translations";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const MARQUEE_TEXT =
-  "AUTOMATE \u2014 INTEGRATE \u2014 SCALE \u2014 AUTOMATE \u2014 INTEGRATE \u2014 SCALE \u2014 ";
-
 export default function Marquee() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const { lang } = useLang();
+  const marqueeText = t(lang).marquee;
 
   useEffect(() => {
     const track = trackRef.current;
@@ -43,8 +44,8 @@ export default function Marquee() {
           lineHeight: 1,
         }}
       >
-        {MARQUEE_TEXT}
-        {MARQUEE_TEXT}
+        {marqueeText}
+        {marqueeText}
       </div>
     </div>
   );

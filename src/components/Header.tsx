@@ -2,11 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { NAV_LINKS, SITE } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
+import { useLang } from "@/lib/LanguageContext";
+import { t } from "@/lib/translations";
+import LanguageToggle from "./LanguageToggle";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang } = useLang();
+  const tr = t(lang);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -24,7 +29,7 @@ export default function Header() {
         href="/"
         className="font-display text-xl tracking-tight text-text-primary"
       >
-        {SITE.name}
+        {tr.site.name}
       </Link>
 
       {/* Desktop nav */}
@@ -35,29 +40,36 @@ export default function Header() {
             href={link.href}
             className="font-mono text-xs uppercase tracking-[0.15em] text-text-secondary hover:text-accent transition-colors duration-300"
           >
-            {link.label}
+            {tr.nav[link.key]}
           </a>
         ))}
+        <div className="ml-2">
+          <LanguageToggle />
+        </div>
       </nav>
 
-      {/* Mobile menu button */}
-      <button
-        className="md:hidden flex flex-col gap-1.5 p-2"
-        onClick={() => setMobileOpen(!mobileOpen)}
-        aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        aria-expanded={mobileOpen}
-      >
-        <span
-          className={`block w-5 h-px bg-text-primary transition-all duration-300 ${
-            mobileOpen ? "rotate-45 translate-y-[3.5px]" : ""
-          }`}
-        />
-        <span
-          className={`block w-5 h-px bg-text-primary transition-all duration-300 ${
-            mobileOpen ? "-rotate-45 -translate-y-[3.5px]" : ""
-          }`}
-        />
-      </button>
+      {/* Mobile: language toggle + menu button */}
+      <div className="md:hidden flex items-center gap-3">
+        <LanguageToggle compact />
+
+        <button
+          className="flex flex-col gap-1.5 p-2"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? tr.header.closeMenu : tr.header.openMenu}
+          aria-expanded={mobileOpen}
+        >
+          <span
+            className={`block w-5 h-px bg-text-primary transition-all duration-300 ${
+              mobileOpen ? "rotate-45 translate-y-[3.5px]" : ""
+            }`}
+          />
+          <span
+            className={`block w-5 h-px bg-text-primary transition-all duration-300 ${
+              mobileOpen ? "-rotate-45 -translate-y-[3.5px]" : ""
+            }`}
+          />
+        </button>
+      </div>
 
       {/* Mobile nav */}
       <nav
@@ -75,7 +87,7 @@ export default function Header() {
             tabIndex={mobileOpen ? 0 : -1}
             className="font-mono text-sm uppercase tracking-[0.15em] text-text-secondary hover:text-accent transition-colors duration-300"
           >
-            {link.label}
+            {tr.nav[link.key]}
           </a>
         ))}
       </nav>

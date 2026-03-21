@@ -6,9 +6,12 @@ import CanvasBackground from "@/components/CanvasBackground";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
+import TryBotSection from "@/components/TryBotSection";
 import AboutSection from "@/components/AboutSection";
 import Marquee from "@/components/Marquee";
 import ContactSection from "@/components/ContactSection";
+import { LanguageProvider } from "@/lib/LanguageContext";
+import Footer from "@/components/Footer";
 
 export default function PageClient() {
   const [loaded, setLoaded] = useState(false);
@@ -21,7 +24,7 @@ export default function PageClient() {
   }, []);
 
   return (
-    <>
+    <LanguageProvider>
       {/* Loader */}
       <div
         className={`fixed inset-0 z-50 bg-bg-primary flex items-center justify-center transition-opacity duration-700 ${
@@ -44,19 +47,13 @@ export default function PageClient() {
         <main className="relative z-20">
           <HeroSection />
           <ServicesSection />
+          <TryBotSection />
           <AboutSection />
           <Marquee />
           <ContactSection />
-          <footer className="relative z-20 py-12 px-6 flex flex-col gap-2 items-center md:flex-row md:justify-between border-t border-text-muted/10">
-            <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-text-muted">
-              &copy; {new Date().getFullYear()} FlowStack.Studio
-            </span>
-            <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-text-muted">
-              All rights reserved
-            </span>
-          </footer>
+          <Footer />
         </main>
       </SmoothScroller>
-    </>
+    </LanguageProvider>
   );
 }
