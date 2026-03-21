@@ -9,41 +9,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function StatsSection() {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const overlayRef = useRef<HTMLDivElement>(null);
   const numbersRef = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
-    const overlay = overlayRef.current;
-    if (!wrapper || !overlay) return;
+    if (!wrapper) return;
 
     const section = wrapper.querySelector("section");
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // Dark overlay fade in
-      gsap.set(overlay, { opacity: 0 });
-      gsap.to(overlay, {
-        opacity: 0.92,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 60%",
-          end: "top 20%",
-          scrub: true,
-        },
-      });
-
-      // Fade overlay out on exit
-      gsap.to(overlay, {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: section,
-          start: "bottom 80%",
-          end: "bottom 40%",
-          scrub: true,
-        },
-      });
-
       // Stagger up + counter
       const items = section.querySelectorAll("[data-stat]");
       gsap.set(items, { y: 60, opacity: 0 });
@@ -91,11 +66,6 @@ export default function StatsSection() {
 
   return (
     <div ref={wrapperRef}>
-      {/* Dark overlay */}
-      <div
-        ref={overlayRef}
-        className="fixed inset-0 z-10 bg-[#0a0a0a] pointer-events-none"
-      />
       <section className="relative z-20 py-32 md:py-48 section-center px-6">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-text-muted mb-16">
           Numbers

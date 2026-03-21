@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #0a0a0a;
-  --bg-elevated: #111111;
-  --text-primary: #f0ede8;
-  --text-secondary: #888888;
-  --text-muted: #555555;
-  --accent: #e8e4de;
+  --bg-primary: #050507;
+  --bg-elevated: #0f0f14;
+  --text-primary: #e8eaf0;
+  --text-secondary: #8b8ea3;
+  --text-muted: #44465a;
+  --accent: #C084FC;
+  --accent-secondary: #6366F1;
+  --accent-tertiary: #14B8A6;
 }
 
 @theme inline {
@@ -16,6 +18,8 @@
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
   --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-tertiary: var(--accent-tertiary);
   --font-display: var(--font-instrument-serif);
   --font-body: var(--font-instrument-sans);
   --font-mono: var(--font-jetbrains-mono);
@@ -25,7 +29,7 @@ html {
   background: var(--bg-primary);
   color: var(--text-primary);
   scrollbar-width: thin;
-  scrollbar-color: var(--text-muted) var(--bg-primary);
+  scrollbar-color: color-mix(in srgb, var(--accent) 40%, transparent) var(--bg-primary);
 }
 
 body {
@@ -110,6 +114,6 @@ html.lenis, html.lenis body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--text-muted);
+  background: color-mix(in srgb, var(--accent) 40%, transparent);
   border-radius: 2px;
 }

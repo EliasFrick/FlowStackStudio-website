@@ -83,9 +83,7 @@ export default function ScrollSection({
             trigger: el,
             start: "top 80%",
             end: "top 20%",
-            toggleActions: persist
-              ? "play none none none"
-              : "play reverse play reverse",
+            toggleActions: "play none none reverse",
           },
         });
       } else {
@@ -98,9 +96,7 @@ export default function ScrollSection({
             trigger: el,
             start: "top 80%",
             end: "top 20%",
-            toggleActions: persist
-              ? "play none none none"
-              : "play reverse play reverse",
+            toggleActions: "play none none reverse",
           },
         });
       }

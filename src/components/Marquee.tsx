@@ -36,7 +36,7 @@ export default function Marquee() {
     <div className="relative z-20 py-16 md:py-24 overflow-hidden" aria-hidden="true">
       <div
         ref={trackRef}
-        className="whitespace-nowrap font-display uppercase text-text-primary/[0.06]"
+        className="whitespace-nowrap font-display uppercase text-accent/[0.06]"
         style={{
           fontSize: "clamp(6rem, 12vw, 14rem)",
           letterSpacing: "-0.02em",

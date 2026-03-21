@@ -35,7 +35,7 @@ export default function PageClient() {
             FlowStack.Studio
           </span>
           <div className="w-32 h-px bg-text-muted/30 overflow-hidden">
-            <div className="h-full w-full bg-text-primary animate-[loading_1.5s_ease-in-out_infinite] origin-left" />
+            <div className="h-full w-full bg-gradient-to-r from-accent via-accent-secondary to-accent-tertiary animate-[loading_1.5s_ease-in-out_infinite] origin-left" />
           </div>
         </div>
       </div>

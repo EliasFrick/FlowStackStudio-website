@@ -48,7 +48,7 @@ export default function ContactSection() {
               name="name"
               required
               placeholder="Name"
-              className="w-full bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-text-secondary transition-colors"
+              className="w-full bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-accent transition-colors"
             />
             <label className="sr-only" htmlFor="contact-email">Email</label>
             <input
@@ -57,7 +57,7 @@ export default function ContactSection() {
               name="email"
               required
               placeholder="Email"
-              className="w-full bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-text-secondary transition-colors"
+              className="w-full bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-accent transition-colors"
             />
             <label className="sr-only" htmlFor="contact-message">Message</label>
             <textarea
@@ -66,11 +66,11 @@ export default function ContactSection() {
               required
               rows={4}
               placeholder="Tell us about your project"
-              className="w-full bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-text-secondary transition-colors resize-none"
+              className="w-full bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-accent transition-colors resize-none"
             />
             <button
               type="submit"
-              className="mt-4 self-center border border-text-secondary/30 px-10 py-4 font-mono text-xs uppercase tracking-[0.2em] text-text-primary hover:bg-text-primary hover:text-bg-primary transition-all duration-300"
+              className="mt-4 self-center border border-accent/30 px-10 py-4 font-mono text-xs uppercase tracking-[0.2em] text-text-primary hover:bg-accent hover:text-bg-primary transition-all duration-300"
             >
               Start a Project
             </button>

@@ -73,6 +73,7 @@ export default function HeroSection() {
       </p>
       <h1
         ref={headingRef}
+        aria-label={SITE.tagline}
         className="font-display text-center overflow-hidden"
         style={{
           fontSize: "clamp(3.5rem, 12vw, 12rem)",
@@ -99,7 +100,7 @@ export default function HeroSection() {
         <span className="font-mono text-[10px] uppercase tracking-[0.2em]">
           Scroll
         </span>
-        <div className="w-px h-8 bg-text-muted/50 animate-pulse" />
+        <div className="w-px h-8 bg-accent/50 animate-pulse" />
       </div>
     </section>
   );

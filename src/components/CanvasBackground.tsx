@@ -47,9 +47,11 @@ export default function CanvasBackground({ onLoaded }: { onLoaded?: () => void }
 
   useEffect(() => {
     let completedCount = 0;
+    let aborted = false;
     const images: HTMLImageElement[] = [];
 
     const onComplete = () => {
+      if (aborted) return;
       completedCount++;
       if (completedCount === FRAME_COUNT) {
         setLoaded(true);
@@ -70,6 +72,14 @@ export default function CanvasBackground({ onLoaded }: { onLoaded?: () => void }
       images.push(img);
     }
     framesRef.current = images;
+
+    return () => {
+      aborted = true;
+      images.forEach((img) => {
+        img.onload = null;
+        img.onerror = null;
+      });
+    };
   }, [drawFrame]);
 
   useEffect(() => {
@@ -78,7 +88,6 @@ export default function CanvasBackground({ onLoaded }: { onLoaded?: () => void }
     const frameObj = scrollFrameRef.current;
     frameObj.current = 0;
 
-    const container = containerRef.current;
     const ctx = gsap.context(() => {
       gsap.to(frameObj, {
         current: FRAME_COUNT - 1,
@@ -87,7 +96,7 @@ export default function CanvasBackground({ onLoaded }: { onLoaded?: () => void }
         scrollTrigger: {
           trigger: document.documentElement,
           start: "top top",
-          end: "bottom bottom",
+          end: "50% top",
           scrub: 0.5,
           onUpdate: () => {
             const idx = Math.round(frameObj.current);
@@ -95,7 +104,7 @@ export default function CanvasBackground({ onLoaded }: { onLoaded?: () => void }
           },
         },
       });
-    }, container || undefined);
+    });
 
     return () => ctx.revert();
   }, [loaded, drawFrame]);
@@ -121,15 +130,16 @@ export default function CanvasBackground({ onLoaded }: { onLoaded?: () => void }
   return (
     <div
       ref={containerRef}
+      aria-hidden="true"
       className="fixed inset-0 z-0"
-      style={{ opacity: 0.1, filter: "blur(2px)" }}
+      style={{ opacity: 0.35 }}
     >
       <canvas
         ref={canvasRef}
         className="w-full h-full"
       />
       {/* Dark scrim over canvas */}
-      <div className="absolute inset-0 bg-[#0a0a0a]/88" />
+      <div className="absolute inset-0 bg-bg-primary/60" />
     </div>
   );
 }

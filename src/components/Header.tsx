@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-6 md:px-10 py-5 transition-all duration-500 ${
-        scrolled ? "bg-[#0a0a0a]/80 backdrop-blur-md" : ""
+        scrolled ? "bg-bg-primary/80 backdrop-blur-md" : ""
       }`}
     >
       <a
@@ -32,7 +32,7 @@ export default function Header() {
           <a
             key={link.href}
             href={link.href}
-            className="font-mono text-xs uppercase tracking-[0.15em] text-text-secondary hover:text-text-primary transition-colors duration-300"
+            className="font-mono text-xs uppercase tracking-[0.15em] text-text-secondary hover:text-accent transition-colors duration-300"
           >
             {link.label}
           </a>
@@ -61,7 +61,7 @@ export default function Header() {
       {/* Mobile nav */}
       {mobileOpen && (
         <nav
-          className="absolute top-full left-0 right-0 bg-[#0a0a0a]/95 backdrop-blur-md py-8 px-6 flex flex-col gap-6 md:hidden"
+          className="absolute top-full left-0 right-0 bg-bg-primary/95 backdrop-blur-md py-8 px-6 flex flex-col gap-6 md:hidden"
           aria-label="Mobile navigation"
         >
           {NAV_LINKS.map((link) => (
@@ -69,7 +69,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="font-mono text-sm uppercase tracking-[0.15em] text-text-secondary hover:text-text-primary transition-colors duration-300"
+              className="font-mono text-sm uppercase tracking-[0.15em] text-text-secondary hover:text-accent transition-colors duration-300"
             >
               {link.label}
             </a>
