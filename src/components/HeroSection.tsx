@@ -89,13 +89,13 @@ export default function HeroSection() {
       </h1>
       <p
         data-hero-fade
-        className="font-body text-lg md:text-xl text-text-secondary mt-8 max-w-md text-center"
+        className="font-body text-lg md:text-xl text-text-secondary mt-8 max-w-sm md:max-w-md text-center"
       >
         {SITE.description}
       </p>
       <div
         data-hero-fade
-        className="mt-16 flex flex-col items-center gap-2 text-text-muted"
+        className="mt-10 md:mt-16 flex flex-col items-center gap-2 text-text-muted"
       >
         <span className="font-mono text-[10px] uppercase tracking-[0.2em]">
           Scroll

@@ -81,10 +81,10 @@ html.lenis, html.lenis body {
 @media (max-width: 1023px) {
   .section-left {
     padding-left: 5vw;
-    padding-right: 40vw;
+    padding-right: 25vw;
   }
   .section-right {
-    padding-left: 40vw;
+    padding-left: 25vw;
     padding-right: 5vw;
   }
 }

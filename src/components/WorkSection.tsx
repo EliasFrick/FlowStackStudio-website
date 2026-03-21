@@ -25,11 +25,11 @@ export default function WorkSection() {
             <h3 className="font-display text-2xl md:text-3xl text-text-primary mb-1">
               {project.title}
             </h3>
-            <p className="font-body text-base text-text-secondary">
+            <p className="font-body text-sm md:text-base text-text-secondary">
               {project.description}
             </p>
             {i < PROJECTS.length - 1 && (
-              <div className="mt-10 h-px bg-text-muted/20 max-w-lg" />
+              <div className="mt-10 h-px bg-text-muted/20 max-w-full md:max-w-lg" />
             )}
           </div>
         ))}

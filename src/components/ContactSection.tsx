@@ -27,7 +27,7 @@ export default function ContactSection() {
         >
           Let&apos;s Build Something
         </h2>
-        <p className="font-body text-lg text-text-secondary mb-12 max-w-md">
+        <p className="font-body text-lg text-text-secondary mb-12 max-w-sm md:max-w-md">
           Have a project in mind? Tell us about it and we&apos;ll get back to
           you within 24 hours.
         </p>
@@ -39,7 +39,7 @@ export default function ContactSection() {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="w-full max-w-md flex flex-col gap-6"
+            className="w-full max-w-sm md:max-w-md flex flex-col gap-6"
           >
             <label className="sr-only" htmlFor="contact-name">Name</label>
             <input
@@ -48,7 +48,7 @@ export default function ContactSection() {
               name="name"
               required
               placeholder="Name"
-              className="w-full bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-accent transition-colors"
+              className="w-full min-h-[44px] bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-accent transition-colors"
             />
             <label className="sr-only" htmlFor="contact-email">Email</label>
             <input
@@ -57,7 +57,7 @@ export default function ContactSection() {
               name="email"
               required
               placeholder="Email"
-              className="w-full bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-accent transition-colors"
+              className="w-full min-h-[44px] bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-accent transition-colors"
             />
             <label className="sr-only" htmlFor="contact-message">Message</label>
             <textarea
@@ -66,11 +66,11 @@ export default function ContactSection() {
               required
               rows={4}
               placeholder="Tell us about your project"
-              className="w-full bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-accent transition-colors resize-none"
+              className="w-full min-h-[44px] bg-transparent border-b border-text-muted/30 pb-3 font-body text-base text-text-primary placeholder:text-text-muted outline-none focus:border-accent transition-colors resize-none"
             />
             <button
               type="submit"
-              className="mt-4 self-center border border-accent/30 px-10 py-4 font-mono text-xs uppercase tracking-[0.2em] text-text-primary hover:bg-accent hover:text-bg-primary transition-all duration-300"
+              className="mt-4 self-center border border-accent/30 px-10 py-4 min-h-[44px] font-mono text-xs uppercase tracking-[0.2em] text-text-primary hover:bg-accent hover:text-bg-primary transition-all duration-300"
             >
               Start a Project
             </button>
